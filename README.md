@@ -1,144 +1,183 @@
-🛡️ Financial Fraud Detection System v2.0
+# 🛡️ Financial Fraud Detection System v2.0
 
-An end-to-end data science project designed to detect fraudulent credit card transactions.
-The main objective of this project is to handle extreme class imbalance and identify anomalous transaction patterns that indicate fraud.
+An **end-to-end data analytics project** focused on exploring credit card transaction data to identify fraud patterns and understand transaction behavior.
 
-🚀 Features
-📊 Interactive Dashboard
+The main objective of this project is to **analyze class imbalance in fraud data and extract analytical insights** from transaction distributions.
 
-A Streamlit-based UI that visualizes:
+---
 
-Transaction distribution
+# 🚀 Features
 
-Fraud rates
+## 📊 Interactive Dashboard
 
-Transaction amount patterns
+A **Streamlit-based UI** that visualizes:
 
-🧠 Neural Network Ready
+- Transaction distribution  
+- Fraud rates  
+- Transaction amount patterns  
 
-Dashboard preprocessing includes:
+---
 
-Log transformation for skewed features
+## 🗄️ Database Management
 
-Data preparation suitable for ML models
+- Uses **SQLite** for efficient data storage  
+- Fast query execution using **SQLAlchemy**
 
-🗄️ Database Management
+---
 
-Uses SQLite for efficient data storage
+## 📈 Analytical Insights
 
-Fast query execution via SQLAlchemy
+The dashboard provides insights into:
 
-📈 Analytical Insights
+- Fraud vs non-fraud transaction distribution  
+- Transaction amount patterns  
+- Data imbalance within the dataset  
 
-Each visualization provides actionable insights useful for:
+These insights help in understanding **fraud behavior trends in financial transactions**.
 
-Model training strategy
+---
 
-Handling imbalanced datasets (SMOTE / Undersampling)
+# 🛠️ Tech Stack
 
-🛠️ Tech Stack
-Category	Tools
-Language	Python 3.12
-Data Processing	Pandas, NumPy
-Visualization	Streamlit, Plotly
-Database	SQLite3, SQLAlchemy
-ML Preparation	Scikit-learn
-Environment	Virtual Environments (venv)
-📂 Project Structure
+| Category | Tools |
+|--------|------|
+| Language | Python 3.12 |
+| Data Processing | Pandas, NumPy |
+| Visualization | Streamlit, Plotly |
+| Database | SQLite3, SQLAlchemy |
+| Environment | Virtual Environments (venv) |
+
+---
+
+# 📂 Project Structure
+
+
 Credit-Fraud/
 │
 ├── app/
-│   ├── app.py            # Main Streamlit dashboard
-│   └── queries.py        # SQL query definitions
+│ ├── app.py # Main Streamlit dashboard
+│ └── queries.py # SQL query definitions
 │
 ├── database/
-│   ├── setup_db.py       # Database initialization script
-│   └── fraud_data.db     # SQLite database
+│ ├── setup_db.py # Database initialization script
+│ └── fraud_data.db # SQLite database
 │
 ├── data/
-│   └── creditcard.csv    # Raw dataset
+│ └── creditcard.csv # Raw dataset
 │
 ├── requirements.txt
-└── myenv/                # Virtual environment
-⚙️ Setup & Installation
-1️⃣ Clone the Repository
+└── myenv/ # Virtual environment
+
+
+---
+
+````markdown
+## ⚙️ Setup & Installation
+
+### 1. Clone the Repository
+```bash
 git clone <your-repo-url>
 cd Credit-Fraud
-2️⃣ Setup Virtual Environment
+````
+
+### 2. Setup Virtual Environment
+
+```bash
 python3 -m venv myenv
 source myenv/bin/activate
-3️⃣ Install Dependencies
-pip install pandas sqlalchemy streamlit plotly scikit-learn
-4️⃣ Initialize Database
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install pandas sqlalchemy streamlit plotly
+```
+
+### 4. Initialize Database
+
+```bash
 python3 database/setup_db.py
-5️⃣ Run the Dashboard
+```
+
+### 5. Run the Dashboard
+
+```bash
 streamlit run app/app.py
-🛡️ Project Organization & Best Practices
-Version Control
+```
 
-The project includes a .gitignore file to prevent unnecessary files from being pushed to GitHub such as:
+---
 
-myenv/
+## 🛡️ Project Organization & Best Practices
 
-__pycache__/
+### Version Control
 
-local database files
+The project includes a `.gitignore` file to prevent unnecessary files from being pushed to GitHub such as:
 
-This keeps the repository clean and secure.
+* `myenv/`
+* `__pycache__/`
+* local database files
 
-Virtual Environment Isolation
+This keeps the repository **clean and organized**.
 
-Dependencies are installed in a project-specific virtual environment (myenv) to prevent conflicts with the system Python environment.
+### Virtual Environment Isolation
 
-Modular Design
+Dependencies are installed in a **project-specific virtual environment (`myenv`)** to avoid conflicts with the system Python environment.
+
+### Modular Design
 
 The project structure separates concerns:
 
-app/ → Streamlit dashboard
+* `app/` → Streamlit dashboard
+* `queries.py` → SQL query logic
 
-queries.py → SQL query logic
+This improves **code readability and maintainability**.
 
-This improves maintainability and readability.
+### Performance Optimization
 
-Performance Optimization
+Streamlit caching is used to avoid repeated database queries and improve dashboard loading performance.
 
-Streamlit’s caching system:
-
+```python
 @st.cache_data
+```
 
-is used to avoid repeated database queries and improve dashboard loading speed.
+---
 
-🧠 Key Learnings
-Handling Class Imbalance
+## 🧠 Key Learnings
 
-The dataset contains only ~0.17% fraudulent transactions, which highlights the importance of:
+### Class Imbalance in Financial Data
 
-Precision
+The dataset contains only **~0.17% fraudulent transactions**, which highlights the extreme imbalance present in fraud datasets.
 
-Recall
+### Transaction Amount Distribution
 
-PR Curve
+Transaction amounts are **highly skewed**, making distribution analysis important for identifying unusual patterns.
 
-instead of relying solely on accuracy.
+### Database-First Data Handling
 
-Feature Transformation
+Using a **database layer instead of loading full CSV files in memory** improves:
 
-Transaction amounts are highly skewed, so log scaling was applied to normalize distributions.
+* performance
+* scalability
+* query efficiency
 
-Database-First Architecture
+---
 
-Using a database layer instead of loading full CSVs in memory improves:
+## Dashboard
+<img width="1851" height="889" alt="image" src="https://github.com/user-attachments/assets/97a8d582-b91b-4ee7-bdb9-79b338f80730" />
+<img width="1820" height="755" alt="image" src="https://github.com/user-attachments/assets/8357a6f0-dbe0-43e4-8dcb-bdccb442587a" />
 
-performance
 
-scalability
+---
 
-query efficiency
+## 👨‍💻 Author
 
-👨‍💻 Author
+**Janaki Nath Verma**
 
-Janaki Nath Verma
+---
 
-📌 Project Status
+## 📌 Project Status
 
-✅ Completed
+✅ **Completed**
+
+```
+```
