@@ -1,0 +1,6 @@
+pandas
+streamlit
+sqlalchemy
+plotly
+scikit-learn
+imbalanced-learn

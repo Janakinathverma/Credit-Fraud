@@ -1,0 +1,23 @@
+# --- Python environment ---
+myenv/
+venv/
+env/
+.env
+
+# --- Python cache & bytecode ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Database & Data files (Jise git pe nahi bhejna) ---
+database/fraud_data.db
+data/
+.ipynb_checkpoints/
+
+# --- IDE files ---
+.vscode/
+.idea/
+
+# --- Streamlit ---
+.streamlit/
